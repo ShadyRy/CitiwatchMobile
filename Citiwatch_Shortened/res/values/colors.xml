@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryOrange">#E05215</color>
+    <color name="darkOrange">#C44510</color>
+    <color name="lightOrangeAlpha">#33E05215</color>
+    <color name="colorBackground">#F5F4F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="textDark">#1A1A1A</color>
+    <color name="textGray">#757575</color>
+    <color name="textLightGray">#BDBDBD</color>
+    <color name="colorEmergency">#E84B0C</color>
+    <color name="colorGreen">#2E7D32</color>
+    <color name="colorGreenBg">#E8F5E9</color>
+    <color name="colorBlueBg">#E3F2FD</color>
+    <color name="colorBlue">#1565C0</color>
+    <color name="colorCardBorder">#E8E8E8</color>
+    <color name="colorOrangeBg">#FFF3EE</color>
+    <color name="colorChipBg">#F0F0F0</color>
+</resources>

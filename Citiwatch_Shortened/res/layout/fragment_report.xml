@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="100dp">
+
+            <!-- ═══ Orange Header Card ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_orange_banner"
+                android:padding="20dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Report a Community Hazard"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Report hazards, track government responses, and help build safer cities together."
+                        android:textSize="13sp"
+                        android:textColor="#EEEEEE"/>
+                </LinearLayout>
+
+                <!-- Right arrow box icon -->
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/ic_logout"
+                    android:contentDescription="Submit report"/>
+            </LinearLayout>
+
+            <!-- ═══ Issue Title ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issue Title"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etIssueTitle"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="e.g., Damaged electrical post, deep pothole"
+                android:textColor="@color/textDark"
+                android:textSize="14sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- ═══ Category + Urgency Level side by side ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Category -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textSize="15sp"
+                        android:textColor="@color/textDark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"/>
+                </LinearLayout>
+
+                <!-- Urgency Level -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Urgency Level"
+                        android:textSize="15sp"
+                        android:textColor="@color/textDark"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerUrgency"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ═══ Detailed Description ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detailed Description"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="Provide specific details about the issue, surrounding landmarks, and immediate hazards to pedestrians or motorists..."
+                android:textColor="@color/textDark"
+                android:textSize="13sp"
+                android:gravity="top|start"
+                android:padding="14dp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- ═══ Photo Upload ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detailed Description"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Photo upload dashed box -->
+            <LinearLayout
+                android:id="@+id/llAddPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_edittext_rounded"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_camera"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Camera icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to upload or snap a photo"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supports JPG, PNG up to 10mb"
+                    android:textSize="12sp"
+                    android:textColor="@color/textGray"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- ═══ Incident Location ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incident Location"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Location field + GPS button side by side -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Location field with pin icon -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp">
+
+                    <EditText
+                        android:id="@+id/etLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:hint="Street, Landmark, Barangay"
+                        android:textColor="@color/textDark"
+                        android:textSize="13sp"
+                        android:paddingStart="36dp"
+                        android:paddingEnd="12dp"/>
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:contentDescription="Location pin"/>
+                </FrameLayout>
+
+                <!-- Auto-GPS button -->
+                <Button
+                    android:id="@+id/btnAutoGps"
+                    android:layout_width="112dp"
+                    android:layout_height="52dp"
+                    android:text="Auto-GPS"
+                    android:textSize="13sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_blue_button"
+                    android:stateListAnimator="@null"
+                    android:drawableStart="@drawable/ic_gps"
+                    android:drawablePadding="4dp"/>
+            </LinearLayout>
+
+            <!-- ═══ Red Hazard Caution Banner ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_caution_red"
+                android:padding="14dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <!-- Warning circle icon -->
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:text="⚠"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Immediate Hazard Caution"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If this involves active live electrical lines, severe fire, or direct life-threatening emergencies, dial 911 immediately before filing app reports."
+                    android:textSize="12sp"
+                    android:textColor="#FFCCCC"/>
+            </LinearLayout>
+
+            <!-- ═══ TextClock row (hidden but keeps requirement) ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_report_card"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp">
+
+                <TextClock
+                    android:id="@+id/textClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:format12Hour="hh:mm a"
+                    android:textSize="20sp"
+                    android:textColor="@color/primaryOrange"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextClock
+                    android:id="@+id/textClockDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:format24Hour="EEE, MMM d yyyy"
+                    android:textSize="13sp"
+                    android:textColor="@color/textGray"/>
+            </LinearLayout>
+
+            <!-- CalendarView for incident date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incident Date"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- RatingBar for urgency level (hidden backup widget) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate the Urgency"
+                android:textSize="15sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <RatingBar
+                android:id="@+id/ratingBarUrgency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="2"
+                android:progressTint="@color/primaryOrange"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvUrgencyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🟡 Low"
+                android:textSize="12sp"
+                android:textColor="@color/textGray"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/btnSubmitReport"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit Report"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/bg_orange_button"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

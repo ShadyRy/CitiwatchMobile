@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- Orange radial gradient blob centered in lower half -->
+    <ImageView
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/gradient_splash"
+        android:scaleType="fitCenter"
+        android:contentDescription="background"/>
+
+    <!-- Foreground content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="90dp">
+
+        <!-- App name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CitiWatch"
+            android:textSize="34sp"
+            android:textColor="@color/textDark"
+            android:textStyle="bold"/>
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Community Alert &amp; Action Hub"
+            android:textSize="15sp"
+            android:textColor="@color/textGray"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Spacer -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- Get Started button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGetStarted"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="270dp"
+            android:layout_height="56dp"
+            android:text="Get Started  ›"
+            android:textSize="17sp"
+            android:textColor="@color/primaryOrange"
+            android:textStyle="bold"
+            android:background="@drawable/bg_white_pill_button"
+            android:stateListAnimator="@null"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"
+            app:backgroundTint="@null"/>
+
+        <!-- Log in link -->
+        <TextView
+            android:id="@+id/tvAlreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Log in"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginBottom="56dp"/>
+
+    </LinearLayout>
+</FrameLayout>

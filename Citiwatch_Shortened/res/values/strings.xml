@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">CitiWatch</string>
+    <string name="app_tagline">Community Alert &amp; Action Hub</string>
+    <string name="get_started">Get Started</string>
+    <string name="already_have_account">Already have an account? Log in</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_in">Log in</string>
+    <string name="register">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_agree">I agree to the Terms and Conditions</string>
+    <string name="report_an_issue">Report an Issue ›</string>
+    <string name="recent_reports">Recent reports</string>
+    <string name="see_all">See All</string>
+    <string name="live_district_feed">● Live District Feed</string>
+    <string name="community_hub">Community Alert &amp; Action Hub</string>
+    <string name="logout">Logout</string>
+</resources>

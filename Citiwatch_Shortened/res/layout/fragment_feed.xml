@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
+
+            <!-- Header Row: Live District Feed + Logout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="● Live District Feed"
+                    android:textSize="13sp"
+                    android:textColor="@color/primaryOrange"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/ivLogout"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_logout"
+                    android:contentDescription="Logout"/>
+            </LinearLayout>
+
+            <!-- Main title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Community Alert\n&amp; Action Hub"
+                android:textSize="22sp"
+                android:textColor="@color/primaryOrange"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report hazards, track government responses,\nand help build safer cities together."
+                android:textSize="13sp"
+                android:textColor="@color/textGray"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Stats chips row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <!-- Active Hazards chip -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_stat_chip_red"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_marginEnd="6dp">
+                    <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                        android:src="@drawable/ic_warning_alert" android:layout_marginEnd="5dp"
+                        android:contentDescription="Warning"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="12 Active Hazards"
+                        android:textSize="11sp" android:textColor="@color/primaryOrange"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Resolved chip -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_stat_chip_green"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_marginEnd="6dp">
+                    <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                        android:src="@drawable/ic_check_circle" android:layout_marginEnd="5dp"
+                        android:contentDescription="Check"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="84% Resolved"
+                        android:textSize="11sp" android:textColor="@color/colorGreen"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Response time chip -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_stat_chip_blue"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp">
+                    <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                        android:src="@drawable/ic_globe_small" android:layout_marginEnd="5dp"
+                        android:contentDescription="Globe"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="3h Response"
+                        android:textSize="11sp" android:textColor="@color/colorBlue"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Recent Reports label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent Reports"
+                android:textSize="20sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Filter chips horizontal scroll -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/chipAll"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="All" android:textSize="13sp" android:textColor="@color/white"
+                        android:textStyle="bold" android:background="@drawable/bg_chip_selected"
+                        android:gravity="center" android:paddingStart="18dp" android:paddingEnd="18dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipEmergency"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Emergency" android:textSize="13sp" android:textColor="@color/textGray"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:gravity="center" android:paddingStart="18dp" android:paddingEnd="18dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipReported"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Reported" android:textSize="13sp" android:textColor="@color/textGray"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:gravity="center" android:paddingStart="18dp" android:paddingEnd="18dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipInProgress"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="In Progress" android:textSize="13sp" android:textColor="@color/textGray"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:gravity="center" android:paddingStart="18dp" android:paddingEnd="18dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView android:id="@+id/chipResolved"
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Resolved" android:textSize="13sp" android:textColor="@color/textGray"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:gravity="center" android:paddingStart="18dp" android:paddingEnd="18dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Feed Report Card 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- User info row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_profile"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="User avatar"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ais Pacheco"
+                                android:textSize="14sp"
+                                android:textColor="@color/textDark"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 hr ago"
+                                android:textSize="12sp"
+                                android:textColor="@color/textGray"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency"
+                            android:textSize="11sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_emergency_badge"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Report image -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/colorChipBg"
+                        android:contentDescription="Broken street light"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Broken Street Light"
+                            android:textSize="15sp"
+                            android:textColor="@color/textDark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="10dp">
+                            <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                                android:src="@drawable/ic_location_pin" android:layout_marginEnd="4dp"
+                                android:contentDescription="Location"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Rosario St. corner Araneta Ave."
+                                android:textSize="12sp" android:textColor="@color/textGray"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:orientation="horizontal" android:gravity="center_vertical"
+                                android:background="@drawable/bg_chip_unselected"
+                                android:paddingStart="10dp" android:paddingEnd="10dp"
+                                android:paddingTop="5dp" android:paddingBottom="5dp"
+                                android:layout_marginEnd="8dp">
+                                <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                                    android:src="@drawable/ic_thumbsup" android:layout_marginEnd="4dp"
+                                    android:contentDescription="Likes"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:text="11" android:textSize="12sp" android:textColor="@color/textGray"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:orientation="horizontal" android:gravity="center_vertical"
+                                android:background="@drawable/bg_chip_unselected"
+                                android:paddingStart="10dp" android:paddingEnd="10dp"
+                                android:paddingTop="5dp" android:paddingBottom="5dp">
+                                <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                                    android:src="@drawable/ic_comment" android:layout_marginEnd="4dp"
+                                    android:contentDescription="Comments"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:text="5" android:textSize="12sp" android:textColor="@color/textGray"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Feed Report Card 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_profile"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="User avatar"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ronnie Jr. Villegas"
+                                android:textSize="14sp"
+                                android:textColor="@color/textDark"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4 hrs Ago"
+                                android:textSize="12sp"
+                                android:textColor="@color/textGray"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency"
+                            android:textSize="11sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_emergency_badge"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/colorChipBg"
+                        android:contentDescription="Flooded crossroad"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flooded Crossroad"
+                            android:textSize="15sp"
+                            android:textColor="@color/textDark"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                                android:src="@drawable/ic_location_pin" android:layout_marginEnd="4dp"
+                                android:contentDescription="Location"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Bangga Lacson, Bacolod City"
+                                android:textSize="12sp" android:textColor="@color/textGray"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
