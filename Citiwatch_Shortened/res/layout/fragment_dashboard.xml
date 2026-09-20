@@ -132,6 +132,7 @@
                         android:id="@+id/ivReport1"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
+                        android:src="@drawable/broken_streetlight"
                         android:scaleType="centerCrop"
                         android:background="@color/colorChipBg"
                         android:contentDescription="Broken street light photo"/>
@@ -269,6 +270,7 @@
                         android:id="@+id/ivReport2"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
+                        android:src="@drawable/flooded_crossroad"
                         android:scaleType="centerCrop"
                         android:background="@color/colorChipBg"
                         android:contentDescription="Flooded crossroad photo"/>

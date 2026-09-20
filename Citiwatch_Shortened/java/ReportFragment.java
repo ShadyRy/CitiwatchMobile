@@ -102,7 +102,7 @@ public class ReportFragment extends Fragment {
         btnGps.setOnClickListener(v -> {
             // Simulate GPS location (no runtime permission needed for demo)
             etLocation.setText("Bacolod City, Negros Occidental (GPS)");
-            Toast.makeText(getContext(), "📍 Location detected via GPS",
+            Toast.makeText(getContext(), "Location detected via GPS",
                 Toast.LENGTH_SHORT).show();
         });
 
@@ -134,7 +134,7 @@ public class ReportFragment extends Fragment {
                 return;
             }
 
-            String msg = "✅ Report Submitted!\n"
+            String msg = "Report Submitted!\n"
                 + "Title: "    + title                   + "\n"
                 + "Category: " + categories[catPos]       + "\n"
                 + "Urgency: "  + urgency                  + "\n"
@@ -147,10 +147,10 @@ public class ReportFragment extends Fragment {
     }
 
     private String getUrgencyLabel(float rating) {
-        if (rating <= 1) return "⚪ Very Low";
-        if (rating <= 2) return "🟡 Low";
-        if (rating <= 3) return "🟠 Moderate";
-        if (rating <= 4) return "🔴 High";
-        return "🚨 Critical / Emergency";
+        if (rating <= 1) return "Very Low";
+        if (rating <= 2) return "Low";
+        if (rating <= 3) return "Moderate";
+        if (rating <= 4) return "High";
+        return "Critical / Emergency";
     }
 }
